@@ -1,4 +1,5 @@
 ﻿using ModelinASPCore.Models;
+using System.Linq;
 
 namespace ModelinASPCore.Repository
 {
@@ -9,9 +10,9 @@ namespace ModelinASPCore.Repository
             return Datasource();
         }
 
-        public Student GetStudent(int id)
+        public Student? GetStudent(int id)
         {
-            //return Datasource().Where(x => x.RollNo == id)
+            return Datasource().Where(x => x.RollNo == id).FirstOrDefault();
         }
 
 
